@@ -1,0 +1,391 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* header */
+main{
+	width:1260px;
+	margin: 0 auto;
+}
+
+main .gnav ul{
+	display: flex;
+	justify-content: flex-end;
+	list-style-type: none;
+	padding: 0;
+	margin: 16px 0 0;
+}
+
+main .gnav ul li{
+	text-align: center;
+	font-size: 1.1em;
+	width: 100px;
+	padding-top: 16px;
+}
+
+main .gnav a{
+	text-decoration: none;
+	color: #5d7dbf;
+	font-family: 'Noto Serif JP', serif;
+}
+.gnav a::after {
+  border-bottom: solid 2px rgba(93,125,191,0.80);
+    text-align: center;
+  bottom: 0;
+  content: "";
+  display: block;
+  transition: all .4s ease;
+  -webkit-transition: all .3s ease;
+  width: 0;
+	
+}
+
+
+.gnav a:hover::after {
+  width: 100%;
+	margin: 0 auto;
+}
+
+.index{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+
+
+
+header{
+	position: relative;
+}
+
+.item_box a {
+	text-decoration: none;
+	color: #5d7dbf;
+}
+
+
+.item_box {
+	display: table;
+    width: 100%;
+    margin: 0 auto;
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+	z-index: 1000;
+}
+
+
+.item {
+	width:250px;
+	display: table-cell;
+    padding-top: 20px;
+    padding-bottom: 7px;
+    color: #5d7dbf;
+    text-align: center;
+    vertical-align: top;
+	transition: 1s;
+}
+
+.item:hover{
+	background-color: rgba(115,139,191,0.2);
+}
+.item h2{
+	margin: 10px 10px 0 10px;
+	padding-bottom: 8px;
+    border-bottom: 1px solid #5d7dbf;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 0.075em;
+    line-height: 20px;
+}
+
+.item p{
+	font-size: 14px;
+}
+
+p.link{
+	padding-top: 10px;
+}
+
+/* index-news */
+
+.list {
+	margin: 0 auto;
+   height: 15vh;
+	width: 80%;
+  overflow: scroll;
+	overflow-x: hidden;
+}
+
+.index-news p, h2{
+	font-family: 'Noto Serif JP', serif;
+	 font-size: 16px;
+}
+
+.index-news h2{
+	margin: 20px 0 20px;
+	font-size: 1.5rem;
+	 text-align: center;
+    color: #535354;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+}
+
+/* imgs */
+
+.imgs{
+	margin-top: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content:space-between;
+	width:950px;
+	margin: 70px auto;
+}
+
+
+.conA, .conB, .conC{
+	position: relative;
+	 transition-duration: 0.3s;
+}
+
+.imgs a{
+	text-decoration: none;
+}
+
+.conA p{
+	position: absolute;
+	top: 25px;
+	background-color: #FFF;
+	color:#000;
+	font-family: 'Noto Serif JP', serif;
+	padding: 15px 0 15px 20px;
+	width: 125px;
+	opacity: 0.8;
+}
+
+.conB p{
+	position: absolute;
+	top: 170px;
+	right: 0;
+	width: 125px;
+	background-color: #fea8a8;
+	color:#000;
+	font-family: 'Noto Serif JP', serif;
+	padding: 15px 0 15px 20px;
+	opacity: 0.8;
+}
+.conC p{
+	position: absolute;
+	top: 140px;
+	width: 125px;
+	background-color: #5d7dbf;
+	color:#fff;
+	font-family: 'Noto Serif JP', serif;
+	padding: 15px 0 15px 15px;
+	opacity: 0.8;
+}
+
+.conA:hover{
+	 transform: scale(1.1);
+  transition-duration: 0.3s;
+}
+.conB:hover{
+	 transform: scale(1.1);
+  transition-duration: 0.3s;
+}
+.conC:hover{
+	 transform: scale(1.1);
+  transition-duration: 0.3s;
+}
+
+
+
+/* footer */
+
+footer{
+	background-color: #f4f4f4;
+	padding: 20px 0 10px;
+}
+
+.company ul {
+    text-align: center;
+    font-size: 14px;
+}
+
+.company ul li{
+	color: #5d7dbf;
+    display: inline-block;
+    padding: 0 16px;
+    border-left: 1px solid #5d7dbf;
+	list-style: none;
+}
+
+
+.company ul li:first-child {
+    border-left: 0;
+}
+
+.company ul li:hover{
+	opacity: 0.5;
+}
+
+.company ul li a{
+	text-decoration: none;
+}
+.copyright{
+	text-align: center;
+}
+.copyright{
+margin-top: 20px;
+}
+
+/* sp用 */
+@media (min-width: 541px) {
+	.top_img_sp{
+	display: none;
+}
+	.gnav_sp{
+		display: none;
+	}
+}
+
+@media screen and (max-width: 540px) { 
+	main{
+		width: 100%;
+	}
+	
+	.slider img{
+		width:100%;
+	}
+	
+	.top_img_sp{
+		display: block;
+	}
+	.gnav{
+		display: none;
+	}
+	
+	.top_img_pc{
+		display: none;
+	}
+	
+	
+		/* ハンバーガー */
+	
+	.gnav_sp{
+		z-index: 1000;
+	}
+	
+	.hamburger {
+  display : block;
+  position: fixed;
+  z-index : 3;
+  right : 13px;
+  top   : 12px;
+  width : 42px;
+  height: 42px;
+  cursor: pointer;
+  text-align: center;
+}
+.hamburger span {
+  display : block;
+  position: absolute;
+  width   : 30px;
+  height  : 2px ;
+  left    : 6px;
+  background : #555;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition   : 0.3s ease-in-out;
+  transition        : 0.3s ease-in-out;
+}
+.hamburger span:nth-child(1) {
+  top: 10px;
+}
+.hamburger span:nth-child(2) {
+  top: 20px;
+}
+.hamburger span:nth-child(3) {
+  top: 30px;
+}
+
+/* ナビ開いてる時のボタン */
+.hamburger.active span:nth-child(1) {
+  top : 16px;
+  left: 6px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform   : rotate(-45deg);
+  transform        : rotate(-45deg);
+}
+
+.hamburger.active span:nth-child(2),
+.hamburger.active span:nth-child(3) {
+  top: 16px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform   : rotate(45deg);
+  transform        : rotate(45deg);
+}
+
+nav.globalMenuSp {
+  position: fixed;
+  z-index : 2;
+  top  : 0;
+  left : 0;
+  color: #000;
+  background: #fff;
+  text-align: center;
+  transform: translateX(100%);
+  transition: all 0.6s;
+  width: 100%;
+}
+
+nav.globalMenuSp ul {
+  background: rgba(115,139,191,0.2);
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+nav.globalMenuSp ul li {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  border-bottom: 1px solid #fff;
+}
+nav.globalMenuSp ul li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+nav.globalMenuSp ul li:hover{
+  background-color: rgba(115,139,191,0.2);
+}
+
+nav.globalMenuSp ul li a {
+  display: block;
+  color: #000;
+  padding: 1em 0;
+  text-decoration :none;
+}
+
+/* このクラスを、jQueryで付与・削除する */
+nav.globalMenuSp.active {
+  transform: translateX(0%);
+}
+	
+	
+	.item_box{
+		position: unset;
+	}
+
+	.item{
+		width: auto;
+		display: block;
+    margin: 10px auto;
+	}	
+	
+	.imgs{
+		flex-direction: column;
+		width:100%;
+	}
+	
+	
+}
