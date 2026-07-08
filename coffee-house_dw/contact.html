@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CONTACT|COFFEE HOUSE コーヒーハウス 大阪堺筋本町の隠れ家的カフェ</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body id="contact">
+<header>
+		<h1>COFFEE HOUSE</h1>
+		<nav>
+				<ul>
+						<li><a href="index.html">HOME</a></li>
+						<li><a href="menu.html">MENU</a></li>
+						<li><a href="access.html">ACCESS</a></li>
+						<li><a href="contact.html">CONTACT</a></li>
+				</ul>
+		</nav>
+</header>
+<main>
+		<h2>CONTACT</h2>
+		<form action="#">
+				<div>
+						<table>
+								<caption>
+								※の項目は入力必須項目です。
+								</caption>
+								<tbody>
+										<tr>
+												<th scope="row"><label for="name">お名前<sup>*</sup></label></th>
+												<td><input name="name" type="text" required="required" id="name" placeholder="例）ラビット太郎"></td>
+										</tr>
+										<tr>
+												<th scope="row"><label for="email">E-mail<sup>*</sup></label></th>
+												<td><input name="email" type="email" required="required" id="email" placeholder="例）test@test.com"></td>
+										</tr>
+										<tr>
+												<th scope="row"><label for="tel">電話番号</label></th>
+												<td><input name="tel" type="tel" id="tel" placeholder="例）00-0000-0000"></td>
+										</tr>
+										<tr>
+												<th scope="row"><label>お問い合わせ種別</label></th>
+												<td><label>
+														<input name="kind" type="radio" value="0" checked="checked">
+														商品について</label><br>
+														
+														<label>
+																<input type="radio" name="kind" value="1">
+																店舗について</label><br>
+														
+														<label>
+																<input type="radio" name="kind" value="2">
+																その他</label></td>
+										</tr>
+										<tr>
+												<th scope="row"><label for="message">お問い合わせ内容<sup>*</sup></label></th>
+												<td><textarea name="message" cols="30" rows="10" required="required" id="message" placeholder="ご意見・ご要望をご記入ください。"></textarea></td>
+										</tr>
+								</tbody>
+						</table>
+						<div>
+								<input type="submit" value="入力内容の確認"><input type="reset" value="クリア">
+						</div>
+				</div>
+			
+		</form>
+</main>
+<footer>
+		<address>
+		Copyright &copy; COFFEE HOUSE ALL rights reserved.
+		</address>
+</footer>
+</body>
+</html>

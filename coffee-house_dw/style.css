@@ -1,0 +1,229 @@
+@charset "utf-8";
+* {
+	padding: 0;
+	margin: 0;
+}
+html {
+	font-size: 62.5%; /* デフォルトがcss16pxなので＊16px 62.5 =10px にしている*/
+}
+body {
+	font-size: 1.6em;
+}
+#menu main section li::after, 
+.clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+a {
+	text-decoration: none;
+}
+header, main, footer {
+	margin: 0 auto;
+	width: 1000px;
+}
+header {
+	background-color: #fff;
+	position: fixed;
+	padding-left: 50%;
+	margin-left: -500px;
+}
+
+header h1 {
+	font-weight: normal;
+	color: #946243;
+	margin: 30px 0 10px;
+	font-size: 2.4rem;
+}
+
+
+nav ul {
+	letter-spacing: -0.4em;
+	list-style-type: none;
+
+}
+nav ul li {
+	display: inline-block;
+	width: 250px;
+	letter-spacing: normal;
+	color: #fff;
+}
+nav ul li a {
+	padding: 15px 0;
+	display: block;
+	text-align: center;
+	background-color: #946243;
+	color: #FFFFFF;
+	transition: 0.3s;
+}
+nav ul li a:hover {
+	background-color: #DEB068;
+	color: #FFFFFF;
+}
+main {
+	padding-bottom: 20px;
+	background-color: #DEB068;
+	padding-top: 130px;
+}
+#index main img {
+	margin-bottom: 20px;
+}
+#index main h2 {
+	background-color: #FFFFFF;
+	padding: 10px 0;
+	margin: 0 20px 20px;
+	width: 120px;
+	border-radius: 10px;
+	text-align: center;
+}
+#index main ul {
+	list-style-image: none;
+	list-style-type: none;
+}
+#index main ul li {
+	margin: 0 20px 20px;
+	padding-bottom: 5px;
+	border-bottom: 3px dotted #FFFFFF;
+}
+#menu main section {
+	margin: 0 20px 20px;
+	padding: 20px;
+	background-color: #946243;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+#menu main section h3 {
+	width: 100%;
+	background-image: url(img/listmark.png);
+	color: #FFFFFF;
+	background-repeat: no-repeat;
+	background-position: left 2px;
+	padding-left: 25px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#menu main section div {
+	padding: 20px;
+	background-color: #FFFFFF;
+	width: calc((100% - 40px) / 3);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#menu section div h4 {
+	border-bottom: 1px solid #946243;
+}
+#menu main section div ul {
+	margin: 10px 30px 0;
+}
+main h2 {
+	padding: 20px;
+}
+
+#menu main section div ul li span {
+	float: right;
+}
+#access main .contents {
+	padding: 0 20px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+#access main .contents figure {
+	width: 500px;
+}
+#access .contents figure figcaption {
+	padding: 10px;
+	margin-top: 10px;
+	background-color: #FFFFFF;
+	text-align: center;
+}
+#access main .contents table {
+	width: 440px;
+	border-collapse: collapse;
+}
+#access main .contents tbody th, 
+#access main .contents tbody td{
+	padding: 15px;
+	border: 1px solid #000;
+	background-color: #FFFFFF;
+}
+
+#access main .contents tbody th{
+	background-color: #946243;
+	color: #FFFFFF;	
+}
+
+footer {
+	padding: 20px 0;
+	text-align: center;
+	color: #FFFFFF;
+	background-color: #946243;
+}
+#contact main form div:first-child  {
+	margin: 0 20px 20px;
+	background-color: #FFFFFF;
+	border: 20px solid #946243;
+}
+#contact main form div table {
+	margin: 30px auto;
+	border-collapse: collapse;
+}
+#contact main form div table caption {
+	text-align: left;
+	caption-side: bottom;
+}
+#contact main form tbody tr th {
+	padding: 0 10px 30px 0;
+	vertical-align: top;
+}
+#contact main form tbody tr td {
+	vertical-align: top;
+}
+#contact main form tr th label {
+	display: block;
+	padding: 10px;
+	width: 200px;
+	background-color: #DEB068;
+	text-align: left;
+	font-weight: normal;
+}
+
+#contact main form td input[type="text"],
+#contact main form td input[type="email"],
+#contact main form td input[type="tel"],
+#contact main form td textarea {
+	width:400px;
+	padding: 11px 10px;
+	font-size: 1.6rem;
+} 
+#contact main form td input[type="radio"]{
+	margin-right: 5px;
+}
+
+
+#contact main form td textarea {
+	height: 150px;
+	resize:vertical;
+}
+#contact main form div div {
+	padding: 20px 0;
+	background-color: #DEB068;
+	margin-top: 10px;
+	text-align: center;
+}
+#contact main form div div input {
+	padding: 15px;
+}
+
+#contact main form div div input:first-child{
+	margin-right: 10px;
+}
+
+
+
+footer address {
+	font-style: normal;
+}
