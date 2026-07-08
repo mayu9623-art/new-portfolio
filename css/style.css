@@ -1,0 +1,234 @@
+@charset "utf-8";
+body {
+  font-family: 'Gowun Batang', serif;
+  width: 1024px;
+  margin: 0 auto;
+}
+header {
+  padding: 20px 50px;
+}
+header h1 {
+  font-size: 1.6rem;
+}
+header h1 > span {
+  display: block;
+  font-size: 1.3rem;
+  align-items: center;
+}
+.header_flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header_flex .h_flex_box {
+  flex: 1 1 50%;
+}
+header nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+header ul li {
+  font-size: 1.2rem;
+}
+header nav ul li:hover {
+  color: #182EDD;
+}
+ul.menu {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+.menu li {
+  position: relative;
+  width: 30%;
+}
+.menu img {
+  height: auto;
+  width: 100%;
+  display: block;
+}
+.menu div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  transition: .3s;
+}
+.menu li:hover div {
+  background: rgba(0, 0, 0, 0.5);
+}
+.menu li div p {
+  font-size: 1.6rem;
+}
+/* about */
+#about h1, #portfolio h1 {
+  font-size: 1.6rem;
+  background-color: #00f;
+  padding: 15px 0 15px 15px;
+  color: #fff;
+}
+#about h2 {
+  font-size: 1.2rem;
+  margin: 50px 0 20px 15px;
+}
+#about .me p,
+.skill p {
+  line-height: 1.9;
+  margin-left: 15px;
+}
+#about h3 {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  padding-left: 15px;
+  font-size: 1.4rem;
+  border-bottom: 2px solid #00f;
+  padding-bottom: 10px;
+}
+#about .ab_flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#about .ab_flex div {
+  margin-bottom: 50px;
+}
+#about .ab_flex h4 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+#about .ab_flex .text {
+  margin-top: 10px;
+}
+#about .add p {
+  margin-bottom: 15px;
+}
+/* portfolio */
+.p_flex {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 45px auto 0;
+}
+.p_text {
+  margin-bottom: 15px;
+}
+.fadein {
+  margin-bottom: 50px;
+  width: 30%;
+  
+  transform: translate(0, 50px);
+  transition: all 500ms;
+}
+/* 画面内に入った状態 */
+.fadein.scrollin {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.fadein h2 {
+border-bottom: 1px solid #aaaab3;
+    padding-bottom: 5px;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+.fadein.scrollin a img {
+  border: 2px solid white;
+  transition: 1s;
+}
+.fadein.scrollin a:hover img {
+  border: 2px solid #00f;
+}
+.dtp {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.dtp_con {
+  margin-top: 30px;
+}
+.dtp_con h2 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+footer p {
+  margin: 80px 0 40px;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  body {
+    width: 100%;
+  }
+  header {
+    padding: 5%;
+  }
+  .header_flex {
+    align-items: unset;
+    flex-direction: column;
+  }
+  header ul li {
+    font-size: 1;
+  }
+  .h_flex_box h1 {
+    margin-bottom: 20px;
+  }
+  ul.menu {
+    flex-direction: column;
+  }
+  .menu li {
+    position: relative;
+    width: 80%;
+    margin: 5px auto
+  }
+  .fadein.scrollin img {
+    width: 100%;
+  }
+  element.style {}
+  .p_flex {
+    width: 90%;
+  }
+  footer p {
+    margin: 40px 0 40px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 414px) {
+  /* about */
+  #about .ab_flex {
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+  }
+  #about .skill img {
+    width: 95%;
+  }
+  #about h3 {
+    margin: 35px 0;
+  }
+	
+	
+  .skill .pre_j, .add h3 + p {
+    padding: 5% 10%;
+  }
+	
+	
+	.p_flex{
+		flex-direction: column;
+	}
+	.fadein,
+	.fadein.scrollin {
+    width: 100%;
+	}
+  .last_text {
+    text-align: center;
+  }
+}
