@@ -1,0 +1,889 @@
+@charset "utf-8";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%; /* デフォルトがcss16pxなので＊16px 62.5 =10px にしている*/
+}
+body {
+  font-size: 1.6em;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+header, main nav, .sean h2, footer {
+  font-family: 'Noto Serif JP', serif;
+}
+/* header */
+header li a {
+  width: 140px;
+  display: block;
+  font-size: 1.3em;
+  letter-spacing: 0.05em;
+}
+header li span {
+  font-size: 0.8em;
+}
+p.contact {
+  font-size: 1.1em;
+}
+header li:hover a{
+  background-color: rgba(121, 175, 86, 0.60);
+  transition: 1.5s;
+}
+header nav p a {
+  padding-left: 10px;
+  display: block;
+  margin-bottom: 2px;
+}
+header nav p a:hover {
+  background-color: rgba(248, 244, 155, 1.00);
+  transition: 1.5s;
+}
+header .header_flex, main nav, .sean, footer {
+  width: 1260px;
+  margin: 30px auto 15px;
+}
+header .header_flex {
+  display: flex;
+  justify-content: space-between;
+}
+header .h_conA img {
+  width: 120%;
+}
+.h_conB ul {
+  display: flex;
+  justify-content: flex-end;
+}
+.h_conB ul li {
+  flex: 0 0 20%;
+  text-align: center;
+}
+.h_conB ul li:nth-child(2) {
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+/* ハンバーガーボタン */
+.h_conC {
+  display: none;
+}
+p.contact a {
+  text-align: center;
+  padding: 10px 0;
+  display: block;
+}
+p.contact a:before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background: url("../img/sankaku.png") no-repeat;
+  background-size: contain;
+  margin-right: 10px;
+}
+.hero_img {
+  width: 100%;
+}
+/* main nav*/
+main nav ul li {
+  font-size: 1.3em;
+}
+/* index.html */
+/* main nav */
+main nav ul li {
+  float: left;
+
+}
+main nav ul li:after {
+  margin-left: 10px;
+  content: "＞";
+}
+main nav li:last-child:after {
+  content: none;
+}
+/* .covid */
+.covid {
+  padding: 20px 0;
+  background-color: #79af56;
+  margin: 15px auto;
+  height: auto;
+  width: 1260px;
+}
+.covid > p::before {
+  content: "ー "
+}
+.covid > p::after {
+  content: " ー"
+}
+.covid > p {
+  text-align: center;
+  color: #fff;
+}
+.covid_con ul {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+.covid_con ul li {
+  width: 150px;
+  text-align: center;
+}
+.covid_con span.mt20 {
+  display: block;
+  margin-top: 20px;
+}
+/* content */
+.gl01 {
+  width: 1260px;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+}
+.gl01 .kasane {
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  color: rgba(255, 255, 255, 0.90);
+  font-size: 6em;
+  font-family: 'Noto Serif', serif;
+  font-weight: 100;
+}
+.gl01:hover {
+  opacity: 0.8;
+  transition: 1s;
+}
+.c_box p {
+  float: left;
+}
+.c_box .c_box_inner {
+  float: right;
+  color: #fff;
+  background-image: url(../img/bg_washi.jpg);
+  width: 450px;
+  height: 300px;
+  background-size: cover;
+}
+.c_box2 {
+  margin: 20px auto;
+}
+.c_box2 p {
+  float: right;
+}
+.c_box2 .c_box_inner {
+  float: left;
+  color: #fff;
+  background-image: url(../img/bg_washi.jpg);
+  width: 450px;
+  height: 300px;
+  background-size: cover;
+}
+.c_box_inner h2 {
+  margin-left: 20px;
+  padding-left: 10%;
+  padding-top: 5%;
+  font-size: 2.3em;
+  font-family: 'Noto Serif JP', serif;
+}
+.gl01 .kasane2 {
+  position: absolute;
+  bottom: 0;
+  left: 41%;
+  color: rgba(255, 255, 255, 0.90);
+  font-size: 6em;
+  font-family: 'Noto Serif', serif;
+  font-weight: 100;
+}
+.content {
+  margin-top: 50px;
+}
+.content p, .contact h2 {
+  vertical-align: top;
+}
+/* sean */
+.sean p {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.sean > p::before {
+  content: "ー "
+}
+.sean > p::after {
+  content: " ー"
+}
+.sean_flex {
+  margin-top: 50px;
+  display: flex;
+}
+.s_con {
+  flex: 1;
+  overflow: hidden;
+  background: #000;
+}
+.s_con_img {
+  width: 100%;
+  transition-duration: .3s;
+  vertical-align: top;
+}
+.s_con_img:hover {
+  transition-duration: .3s;
+  transform: scale(1.07);
+  opacity: .6;
+}
+.s_parent {
+  position: relative;
+}
+.s_child {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  margin: auto;
+  color: #fff;
+}
+.sean h2 {
+  font-size: 1.6em;
+}
+/* /index.html */
+/* rooms.html */
+#rooms main {
+  position: relative;
+}
+#rooms .rooms {
+  width: 60%;
+  margin: 0 auto 50px;
+}
+
+
+.rooms h2 {
+  font-size: 2.2em;
+  margin: 45px 0;
+  font-family: 'Noto Serif JP', serif;
+}
+.rooms_text1 {
+  line-height: 3;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.3em;
+}
+.rooms_text2 {
+  position: absolute;
+  top: -11%;
+  right: 20%;
+  opacity: 0.9;
+}
+#rooms section {
+  position: relative;
+  width: 1260px;
+  margin: 0 auto 40px;
+}
+#rooms .sec_1 h3 {
+  padding: 25px 150px;
+  position: absolute;
+  right: 0;
+  top: 35%;
+  background-color: rgba(255, 255, 255, 0.50);
+  font-size: 2em;
+  font-family: 'Noto Serif JP', serif;
+}
+#rooms .sec_2 h3 {
+  padding: 25px 150px;
+  position: absolute;
+  left: 0;
+  top: 35%;
+  background-color: rgba(255, 255, 255, 0.50);
+  font-size: 2em;
+  font-family: 'Noto Serif JP', serif;
+}
+.sec_1:hover, .sec_2:hover {
+  opacity: 0.8;
+  transition: 1s;
+}
+/* /rooms.html */
+
+/* spa.html */
+
+#spa .spa_box{
+	background-image: url(../img/bg_washi2.jpg);
+	background-size: cover;
+	
+}
+
+
+#spa .spa_box .s_text{
+	width:300px;
+	padding-top: 20px;
+	padding-left: 34px;
+	float: left;
+}
+
+#spa .spa_box .s_text h2{
+	text-align: right;
+	padding: 5px 25px;
+	background-color: #000;
+	color:#fff;
+	font-family: 'Noto Serif JP', serif;
+	font-size: 1.8em;
+	margin-bottom: 15px;
+}
+
+#spa .spa_box .s_text h3{
+	text-align: right;
+	font-family: 'Noto Serif JP', serif;
+	font-size: 1.7em;
+}
+
+#spa .spa_box2 .s_text h3 {
+    text-align: left;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.7em;
+}
+
+#spa .s_text p{
+	line-height: 2.2;
+	margin-top: 20px;
+	font-family: 'Noto Serif JP', serif;
+	
+}
+
+#spa .spa_box img.s_img{
+	float: right;
+	
+}
+
+#spa .spa_box,
+#spa .spa_box2
+{
+	width:1260px;
+	margin: 60px auto;
+}
+
+#spa .spa_box2 .s_text h2{
+	text-align: left;
+	padding: 5px 0;
+	border-bottom: 2px solid #000;
+	font-family: 'Noto Serif JP', serif;
+	font-size: 1.8em;
+	margin-bottom: 15px;
+}
+
+#spa .spa_box2 .s_text{
+	width:300px;
+	padding-top: 20px;
+	padding-right: 35px;
+	float: right;
+}
+
+#spa .spa_box2 img.s_img{
+	float: left;
+	
+}
+
+.room_spa{
+	text-align: center;
+	font-family: 'Noto Serif JP', serif;
+	font-size: 2em;
+}
+
+
+.room_spa::before{
+	content: "- "	
+}
+
+.room_spa::after{
+	content: " -"	
+}
+
+/* /spa.html */
+
+/* dishes.html */
+#dishes {
+  font-family: 'Noto Serif JP', serif;
+}
+#dishes .d_flex {
+  display: flex;
+  width: 1260px;
+  margin: 0 auto;
+}
+.d_top_box {
+  width: 1260px;
+  height: 350px;
+  margin: 50px auto;
+  background-image: url("../img/d_img.jpg");
+  background-size: cover;
+  position: relative;
+}
+.d_top_text {
+  font-size: 1.1em;
+}
+.d_inner {
+  position: absolute;
+  top: 20%;
+  left: 35%;
+  background-color: rgba(255, 255, 255, 0.80);
+  width: 350px;
+  padding: 30px;
+  margin: 0 auto;
+}
+.d_inner h2 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+.t_box, .t_box2, .t_box_img {
+  flex: 0 0 50%;
+  box-sizing: border-box;
+}
+.t_box {
+  padding: 10px 50px 0 50px;
+}
+.t_box2 {
+  padding: 30px 50px 0 50px;
+}
+.t_box h2 {
+  font-size: 2.2em;
+  margin-top: 13px;
+  margin-bottom: 13px;
+}
+.t_box p, .t_box2 p {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+/* /dishes.html */
+/* access_contact */
+
+
+#access_contact{
+	width: 1260px;
+	margin: 0 auto;
+	font-family: 'Noto Serif JP', serif;
+}
+
+.contact > h2{
+	text-align: center;
+	margin-top: 50px;
+}
+
+.contact > h2::before{
+	content: "― ";
+}
+
+.contact > h2::after{
+	content: " ―";
+}
+
+.map_f{
+	display: flex;
+	justify-content: space-around;
+}
+
+#access_contact form div table {
+	margin: 30px auto;
+	border-collapse: collapse;
+}
+#access_contact form div table caption {
+	text-align: left;
+	caption-side: bottom;
+}
+#access_contact form tbody tr th {
+	padding: 0 10px 30px 0;
+	vertical-align: top;
+}
+#access_contact form tbody tr td {
+	vertical-align: top;
+}
+#access_contact form tr th label {
+	display: block;
+	padding: 10px;
+	width: 200px;
+	background-color: #79af56;
+	text-align: left;
+	font-weight: normal;
+}
+
+#access_contact form td input[type="text"],
+#access_contact form td input[type="email"],
+#access_contact form td input[type="tel"],
+#access_contact  form td textarea {
+	width:400px;
+	padding: 11px 10px;
+	font-size: 1.6rem;
+} 
+#access_contact form td input[type="radio"]{
+	margin-right: 5px;
+}
+
+
+#access_contact form td textarea {
+	height: 150px;
+	resize:vertical;
+}
+#access_contact form div div {
+	padding: 20px 0;
+	margin-top: 10px;
+	text-align: center;
+}
+#access_contact form div div input {
+	padding: 15px;
+	margin-right: 10px;
+	background-color: #79af56;
+	border: none;
+}
+
+#access_contact form div div input:hover{
+	opacity: 0.8;
+}
+
+/* rooms1 */
+
+.r_text{
+	float: right;
+}
+
+.rooms1_box{float: left;
+}
+
+
+
+
+
+
+/* footer*/
+.footer_flex {
+  margin: 50px auto 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.f_conA img {
+  width: 120%;
+}
+.f_conB {
+  background-image: url("../img/washi.jpg");
+  background-size: cover;
+  padding: 30px 50px;
+}
+.f_conB h3 {
+  text-align: center;
+  font-size: 1.5em;
+}
+.f_conB h3::before {
+  content: "―　"
+}
+.f_conB h3::after {
+  content: "　―"
+}
+.f_conB p.time {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.4em;
+}
+footer .tel {
+  margin-top: 10px;
+  font-size: 1.8em;
+  text-align: right;
+  display: block;
+  /*background-image: url("../img/tel2.png");
+  background-repeat: no-repeat;
+  background-position: 340px;
+  background-size: 35px;*/
+  position: relative;
+}
+
+footer .tel img{
+	width: 31px;
+	margin-right: 5px;
+}
+
+footer .tel::after {
+  content: "";
+  display: block;
+  width: 220px;
+  height: 2px;
+  background-color: #B7B7B7;
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+}
+
+footer address {
+  font-style: normal;
+  font-size: 1.2em;
+  padding: 10px 25px;
+}
+footer small {
+  display: block;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+@media screen and (min-width: 897px){
+	header .header_sp{
+		display: none!important;
+	}
+}
+
+@media screen and (max-width: 896px) {
+	
+  *{
+    width: 100%;
+    margin: 0 auto;
+  }
+	
+	header .header_flex, main nav, .sean, footer {
+    width: 100%;
+    margin: 30px auto 15px;
+}
+	
+  .header_flex {
+    display: none!important;
+  }
+	
+	.h_logo{
+		float: left;
+		width:50%;
+	}
+	
+	.hero_img{
+		margin-top: 10px;
+	}
+	
+  button {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	color: inherit;
+	vertical-align: middle;
+	text-align: inherit;
+	font: inherit;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+/**************** 以下、ハンバーガーボタンのスタイリング ****************/
+.btn {
+	/* ボタンの配置位置  */
+	position: fixed;
+	top: 7px;
+	right: 16px;
+	/* 最前面に */
+	z-index: 10;
+	/* ボタンの大きさ  */
+	width: 48px;
+	height: 48px;
+}
+
+/***** 真ん中のバーガー線 *****/
+.btn-line {
+	display: block;
+	/* バーガー線の位置基準として設定 */
+	position: relative;
+	/* 線の長さと高さ */
+	width: 100%;
+	height: 4px;
+	/* バーガー線の色 */
+	background-color: #d6d5d5;
+	transition: .2s;
+}
+
+/***** 上下のバーガー線 *****/
+.btn-line::before , .btn-line::after {
+	content: "";
+	/* 基準線と同じ大きさと色 */
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #d6d5d5;
+	transition: .5s;
+}
+
+.btn-line::before {
+	/* 上の線の位置 */
+	transform: translateY(-16px);
+}
+
+.btn-line::after {
+	/* 下の線の位置 */
+	transform: translateY(16px);
+}
+
+/***** メニューオープン時 *****/
+.btn-line.open {
+	/* 真ん中の線を透明に */
+	background-color: transparent;
+}
+
+.btn-line.open::before , .btn-line.open::after {
+	content: "";
+	background-color: #333;
+	transition: .2s;
+}
+
+.btn-line.open::before {
+	/* 上の線を傾ける */
+	transform: rotate(45deg);
+}
+
+.btn-line.open::after {
+	/* 上の線を傾ける */
+	transform: rotate(-45deg);
+}
+
+/**************** ここまで、ハンバーガーボタンのスタイリング ****************/
+
+/**************** 以下、メニューのスタイリング ****************/
+.menu {
+	/* メニューを縦に */
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	/* メニューの位置マイナス指定で画面外に */
+	right: -70%;
+	width: 70%;
+	height: 60vh;
+	background-color: rgba(167, 148, 58, .7);
+	color: #efefef;
+	transition: .3s;
+}
+
+.menu a{
+	/* メニューテキスト位置をリスト内中心に */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+
+.menu-list:hover {
+	background-color: rgba(255, 255, 255, .5);
+	color: #333;
+	cursor: pointer;
+	transition: .3s;
+}
+
+/***** メニューオープン時位置0にして画面内に *****/
+.menu.open {
+	position: absolute;
+	right: 0;
+}
+
+/* 600px以上はハンバーガーボタン非表示、ヘッダー固定 */
+
+/**************** ここまで、メニューのスタイリング ****************/
+	
+	main nav ul li {
+    display: contents;
+}
+	
+	
+  .covid {
+    width: 100%;
+  }
+  .covid_con ul {
+    flex-wrap: wrap;
+  }
+  .covid_con ul li, .covid_con ul li img {
+    width: calc(100% / 3);
+    margin-bottom: 5px;
+  }
+	
+	
+	
+  .gl01 {
+    width: 100%;
+  }
+  .gl01 .kasane {
+    font-size: 6rem;
+  }
+  .gl01 .kasane2 {
+    font-size: 6rem;
+    left: 5%;
+  }
+  .c_box2 .c_box_inner, .c_box .c_box_inner {
+    display: none;
+    width: 100%;
+    height: auto;
+  }
+  .c_box2 p, .c_box p {
+    float: none;
+    width: 100%;
+  }
+  .sean h2 {
+    font-size: 3rem;
+	  text-align: center;
+  }
+	
+  .sean {
+    margin-top: 20px;
+	  width:100%!important;
+  }
+	
+	.sean_flex{
+		flex-flow: column;
+	}
+	
+	/* rooms */
+	
+	.rooms_text2{
+		display: none;
+	}
+	
+	#rooms .rooms {
+    width: 80%;
+	}
+	.rooms_text1 {
+    line-height: 2;
+    font-size: 2rem;
+}
+
+	
+#rooms section {
+     width: 100%; 
+}	
+	
+	#rooms .sec_1 h3 {
+     padding: 5px; 
+    right: 0;
+    top: 35%;
+    font-size: 2.2rem;
+   width: 50%;
+}
+	
+#rooms .sec_2 h3 {
+	text-align: right;
+    padding: 5px;
+	width: 50%;
+    left: 0;
+    top: 35%;
+    font-size: 2.2rem;
+}	
+	
+	/* footer */
+  .footer_flex {
+    flex-flow: column-reverse;
+  }
+  .f_conA img {
+    width: 50%;
+    margin-top: 10px;
+  }
+  .f_conB {
+    padding: 30px 4%;
+  }
+	
+
+	
+}
