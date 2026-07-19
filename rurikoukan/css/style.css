@@ -1,0 +1,1087 @@
+/* ==========================================
+   RESET
+========================================== */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    font-size:62.5%;
+}
+
+body{
+    font-family:"Zen Old Mincho",serif;
+    font-size:1.6rem;
+    line-height:2.2;
+    color:#444;
+    background:#faf8f3;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+}
+
+img{
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+    transition:.3s;
+}
+
+ul{
+    list-style:none;
+}
+
+button{
+    border:none;
+    background:none;
+    cursor:pointer;
+}
+
+:root{
+    --main:#314535;
+    --accent:#a8864b;
+    --bg:#faf8f3;
+    --text:#444;
+    --white:#fff;
+    --gray:#777;
+}
+
+
+/* ==========================================
+   COMMON
+========================================== */
+
+.container{
+    width:min(1200px,92%);
+    margin:auto;
+}
+
+section{
+    padding:80px 0 20px;
+}
+
+.grid-2{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:50px;
+    align-items:center;
+}
+
+.reverse .image{
+    order:2;
+}
+
+.reverse .text{
+    order:1;
+}
+
+.section-en{
+    font-family:"Cormorant Garamond",serif;
+    font-size:2rem;
+    letter-spacing:.5em;
+    color:var(--accent);
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.section-en::after{
+    content:"";
+    display:block;
+    width:40px;
+    height:1px;
+    background:var(--accent);
+    margin:15px auto 0;
+}
+
+h1,
+h2,
+h3{
+    font-family:"Zen Old Mincho",serif;
+    font-weight:500;
+    color:#222;
+}
+
+h2{
+    font-size:clamp(3rem,2vw,4rem);
+    line-height:1.8;
+    letter-spacing:.1em;
+}
+
+.text p{
+    margin-bottom:22px;
+    font-size:1.7rem;
+    color:#666;
+    line-height:2;
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(0,0,0,.05);
+    transition:.35s;
+}
+
+header.scroll{
+    background:#fff;
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+    border-bottom-color:transparent;
+}
+
+.header-inner{
+    height:96px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo img{
+    width:auto;
+    height:56px;
+    transition:.3s;
+}
+
+header.scroll .logo img{
+    height:44px;
+}
+
+.pc-nav ul{
+    display:flex;
+    align-items:center;
+    gap:50px;
+}
+
+.pc-nav li{
+    position:relative;
+}
+
+.pc-nav a{
+    font-family:"Cormorant Garamond",serif;
+    font-size:1.9rem;
+    letter-spacing:.15em;
+    color:#333;
+    position:relative;
+    padding-bottom:8px;
+}
+
+.pc-nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:0;
+    height:1px;
+    background:var(--accent);
+    transition:.35s;
+}
+
+.pc-nav a:hover{
+    color:var(--accent);
+}
+
+.pc-nav a:hover::after{
+    width:100%;
+}
+
+
+/* ==========================================
+   HAMBURGER
+========================================== */
+
+.hamburger{
+    width:48px;
+    height:48px;
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    gap:7px;
+}
+
+.hamburger span{
+    display:block;
+    height:2px;
+    background:#222;
+    transition:.35s;
+}
+
+.hamburger.active span:nth-child(1){
+    transform:translateY(9px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2){
+    opacity:0;
+}
+
+.hamburger.active span:nth-child(3){
+    transform:translateY(-9px) rotate(-45deg);
+}
+
+
+/* ==========================================
+   DRAWER OVERLAY
+========================================== */
+
+.drawer-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.4);
+    opacity:0;
+    pointer-events:none;
+    transition:.4s;
+    z-index:997;
+}
+
+.drawer-overlay.open{
+    opacity:1;
+    pointer-events:auto;
+}
+
+
+/* ==========================================
+   DRAWER
+========================================== */
+
+.drawer{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:320px;
+    height:100vh;
+    background:#fff;
+    transition:.4s;
+    z-index:998;
+    padding-top:100px;
+    box-shadow:-15px 0 40px rgba(0,0,0,.15);
+}
+
+.drawer.open{
+    right:0;
+}
+
+.drawer ul{
+    display:flex;
+    flex-direction:column;
+}
+
+.drawer li{
+    border-bottom:1px solid #f0ede5;
+}
+
+.drawer a{
+    display:block;
+    position:relative;
+    padding:24px 35px;
+    font-size:1.7rem;
+    letter-spacing:.05em;
+    transition:.3s;
+}
+
+.drawer a::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    width:3px;
+    background:var(--accent);
+    transform:scaleY(0);
+    transition:.3s;
+}
+
+.drawer a:hover::before{
+    transform:scaleY(1);
+}
+
+.drawer a:hover{
+    background:#f7f5ef;
+    color:var(--accent);
+    padding-left:40px;
+}
+
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+    position:relative;
+    height:105vh;
+    overflow:hidden;
+}
+
+.hero img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transform:scale(1.05);
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        rgba(0,0,0,.25),
+        rgba(0,0,0,.45)
+    );
+}
+
+.hero-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    color:#fff;
+    width:90%;
+}
+
+.hero .sub{
+    font-family:"Cormorant Garamond",serif;
+    font-size:2rem;
+    letter-spacing:.5em;
+    margin-bottom:25px;
+    opacity:.95;
+}
+
+.hero h1{
+    font-size:clamp(3rem, 4.5vw, 5.5rem);
+    font-weight:500;
+    line-height:1.7;
+    letter-spacing:.25em;
+    color:#fff;
+    margin-bottom:50px;
+}
+
+.btn{
+    display:inline-block;
+    padding:10px 60px;
+    background:linear-gradient(135deg, #b89a64 0%, #a8864b 100%);
+    color:#fff;
+    font-size:1.6rem;
+    letter-spacing:.2em;
+    border-radius:2px;
+    box-shadow:0 4px 15px rgba(168, 134, 75, 0.3);
+    transition:.35s;
+}
+
+.btn:hover{
+    background:#8d6f3d;
+    box-shadow:0 6px 20px rgba(168, 134, 75, 0.4);
+    transform:translateY(-5px);
+}
+
+/* フォームの見た目 */
+.contact-form table { width: 100%; border-collapse: collapse; }
+.contact-form th, .contact-form td { padding: 20px; border-bottom: 1px solid #eee; text-align: left; }
+.contact-form input[type="text"], .contact-form input[type="email"], .contact-form input[type="tel"], .contact-form textarea {
+    width: 100%; padding: 12px; border: 1px solid #ddd;
+}
+.form-submit { text-align: center; margin-top: 40px; }
+
+/* パンくずリスト */
+.breadcrumb { margin: 20px 0; font-size: 1.4rem; color: #888; }
+
+/* ヒーロー（サブページ用） */
+.hero_sub { padding: 0; }
+.hero_sub img { width: 85%; margin: 0 auto; }
+
+/* ==========================================
+   CONCEPT
+========================================== */
+
+.concept{
+    background:#faf8f3;
+}
+
+.concept .container{
+    max-width:850px;
+    text-align:center;
+}
+
+.concept h2{
+    margin-bottom:50px;
+}
+
+.concept p{
+    font-size:1.8rem;
+    line-height:2.8;
+    color:#666;
+}
+
+/* ==========================================
+   ROOMS
+========================================== */
+
+.rooms{
+    background:#fff;
+}
+
+.rooms .image{
+    overflow:hidden;
+}
+
+.rooms .image img{
+    transition:.8s;
+}
+
+.rooms:hover img{
+    transform:scale(1.08);
+}
+
+.rooms .text{
+    padding:20px;
+}
+
+.rooms .more{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin-top:45px;
+    color:var(--main);
+    font-weight:600;
+    letter-spacing:.1em;
+}
+
+.rooms .more::after{
+    content:"→";
+    transition:.3s;
+}
+
+.rooms .more:hover::after{
+    transform:translateX(8px);
+}
+
+/* ==========================================
+   SPA
+========================================== */
+
+.spa{
+    background:#f7f4ee;
+}
+
+.spa .image{
+    overflow:hidden;
+}
+
+.spa .image img{
+    transition:.8s;
+}
+
+.spa:hover img{
+    transform:scale(1.08);
+}
+
+.spa .text{
+    padding:20px;
+}
+
+.spa .more{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin-top:45px;
+    color:var(--main);
+    font-weight:600;
+}
+
+.spa .more::after{
+    content:"→";
+    transition:.3s;
+}
+
+.spa .more:hover::after{
+    transform:translateX(8px);
+}
+
+/* ==========================================
+   IMAGE
+========================================== */
+
+.image{
+    position:relative;
+    overflow:hidden;
+}
+
+.image::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0);
+    transition:.4s;
+}
+
+.image:hover::after{
+    background:rgba(0,0,0,.08);
+}
+
+.image img{
+    transition:.8s;
+}
+
+.image:hover img{
+    transform:scale(1.05);
+}
+
+/* ==========================================
+   CUISINE
+========================================== */
+
+.dishes{
+    background:#fff;
+}
+
+.dishes .container{
+    align-items:center;
+}
+
+.dishes .text{
+    padding:20px 40px;
+}
+
+.dishes h2{
+    margin-bottom:20px;
+}
+
+.dishes p{
+    font-size:1.7rem;
+    line-height:2.6;
+    color:#666;
+}
+
+.dishes .more{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    margin-top:45px;
+    color:var(--main);
+    font-weight:600;
+}
+
+.dishes .more::after{
+    content:"→";
+    transition:.3s;
+}
+
+.dishes .more:hover::after{
+    transform:translateX(8px);
+}
+
+/* ==========================================
+   PLAN
+========================================== */
+
+.plan{
+    background:#f7f5ef;
+}
+
+.plan .container{
+    text-align:center;
+}
+
+.card-wrap{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
+    margin-top:70px;
+}
+
+.card{
+    background:#fff;
+    overflow:hidden;
+    transition:.4s;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 25px 60px rgba(0,0,0,.12);
+}
+
+.card img{
+    height:280px;
+    object-fit:cover;
+}
+
+.card-body{
+    padding:35px;
+    text-align:left;
+}
+
+.card-body h3{
+    font-size:2.4rem;
+    margin-bottom:20px;
+    color:#222;
+}
+
+.card-body p{
+    color:#666;
+    line-height:2.2;
+}
+
+/* ==========================================
+   ACCESS
+========================================== */
+
+.access{
+    background:#fff;
+    text-align:center;
+}
+
+.access .container{
+    max-width:800px;
+}
+
+.address{
+    margin:40px 0;
+    font-size:1.8rem;
+    color:#666;
+    line-height:2.5;
+}
+
+.access .btn{
+    margin-top:20px;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+    background:linear-gradient(180deg,#25362b,#1c2921);
+    color:#fff;
+    padding:100px 0 0;
+    position:relative;
+}
+
+footer::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:1px;
+    background:linear-gradient(90deg,transparent,rgba(216,182,122,.5),transparent);
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1.2fr;
+    gap:70px;
+    align-items:flex-start;
+    padding-bottom:60px;
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.footer-logo{
+    width:150px;
+    margin-bottom:25px;
+    opacity:.95;
+}
+
+footer h3{
+    font-family:"Cormorant Garamond",serif;
+    font-size:1.8rem;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:#d8b67a;
+    margin-bottom:25px;
+    position:relative;
+    padding-bottom:12px;
+}
+
+footer h3::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:30px;
+    height:1px;
+    background:#d8b67a;
+}
+
+footer p{
+    font-size:1.5rem;
+    color:rgba(255,255,255,.7);
+    line-height:2.3;
+}
+
+.footer-nav li{
+    margin-bottom:14px;
+}
+
+.footer-nav a{
+    font-size:1.5rem;
+    color:rgba(255,255,255,.75);
+    display:inline-block;
+    transition:.3s;
+}
+
+.footer-nav a:hover{
+    color:#d8b67a;
+    padding-left:8px;
+}
+
+footer small{
+    display:block;
+    text-align:center;
+    padding:28px 0;
+    margin-top:0;
+    border-top:none;
+    font-size:1.2rem;
+    letter-spacing:.15em;
+    color:rgba(255,255,255,.5);
+}
+
+/* ==========================================
+   FOOTER BRAND (テキストロゴ)
+========================================== */
+
+.footer-brand{
+    display:block;
+    margin-bottom:25px;
+}
+
+.footer-brand-en{
+    display:block;
+    font-family:"Cormorant Garamond",serif;
+    font-size:2.6rem;
+    letter-spacing:.25em;
+    color:#fff;
+    margin-bottom:8px;
+}
+
+.footer-brand-jp{
+    display:block;
+    font-family:"Zen Old Mincho",serif;
+    font-size:1.8rem;
+    letter-spacing:.3em;
+    color:#d8b67a;
+}
+
+/* ==========================================
+   HOVER EFFECT
+========================================== */
+
+.image img,
+.card img{
+    transition:transform .8s ease;
+}
+
+.image:hover img,
+.card:hover img{
+    transform:scale(1.06);
+}
+
+/* ==========================================
+   FADE ANIMATION
+========================================== */
+
+.fade{
+    opacity:0;
+    transform:translateY(60px);
+    transition:all .8s ease;
+}
+
+.fade.show{
+    opacity:1;
+    transform:none;
+}
+
+/* ==========================================
+   Responsive（Tablet）
+========================================== */
+
+@media screen and (max-width:1024px){
+    /* ヒーロー（サブページ用） */
+.hero_sub { height: auto; }
+.hero_sub img { width: 100%; height: auto; }
+
+.container{
+    width:92%;
+}
+
+.grid-2{
+    grid-template-columns:1fr;
+    gap:60px;
+}
+
+.reverse .image,
+.reverse .text{
+    order:unset;
+}
+
+.card-wrap{
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+.header-inner{
+    height:80px;
+}
+
+.hero{
+    height:85vh;
+}
+
+.hero h1{
+    font-size:5rem;
+}
+
+section{
+    padding:100px 0;
+}
+
+.footer-grid{
+    grid-template-columns:1fr;
+    gap:50px;
+    text-align:center;
+}
+
+.footer-logo{
+    margin:0 auto 25px;
+}
+
+    footer h3::after{
+        left:50%;
+        transform:translateX(-50%);
+    }
+
+
+}
+
+
+/* ==========================================
+   Responsive（Smartphone）
+========================================== */
+
+@media screen and (max-width:768px){
+
+.pc-nav{
+    display:none;
+}
+
+.hamburger{
+    display:flex;
+}
+
+.container{
+    width:90%;
+}
+
+section{
+    padding:40px 0;
+}
+
+.hero{
+    height:75vh;
+}
+
+.hero h1{
+    font-size:3.6rem;
+    letter-spacing:.18em;
+}
+
+.hero .sub{
+    font-size:1.4rem;
+    letter-spacing:.35em;
+}
+
+h2{
+    font-size:3rem;
+}
+
+.text p{
+    font-size:1.6rem;
+    line-height:2.3;
+}
+
+.card-wrap{
+    grid-template-columns:1fr;
+}
+
+.card img{
+    height:240px;
+}
+
+.card-body{
+    padding:25px;
+}
+
+.btn{
+    width:100%;
+    text-align:center;
+}
+
+.footer-grid{
+    text-align:center;
+}
+
+}
+
+
+/* ==========================================
+   Small Smartphone
+========================================== */
+
+@media screen and (max-width:480px){
+
+.header-inner{
+    height:70px;
+}
+
+.logo img{
+    height:48px;
+}
+
+.hero{
+    height:65vh;
+}
+
+.hero h1{
+    font-size:2.8rem;
+}
+
+.hero .sub{
+    font-size:1.2rem;
+}
+
+.section-en{
+    font-size:1.5rem;
+}
+
+h2{
+    font-size:2.5rem;
+}
+
+.text p{
+    font-size:1.5rem;
+}
+
+.card img{
+    height:210px;
+}
+
+.card-body{
+    padding:20px;
+}
+
+footer{
+    padding:60px 0 20px;
+}
+
+}
+
+
+/* ==========================================
+   Scrollbar
+========================================== */
+
+::selection{
+    background:#a8864b;
+    color:#fff;
+}
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#f5f5f5;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#a8864b;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#8d6f3d;
+}
+
+/* スクロール時のちらつき防止 */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* ==========================================
+   ROOM DETAIL（客室概要）
+========================================== */
+
+.room-detail{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    margin:50px 0 45px;
+    text-align:left;
+}
+
+.room-detail dl{
+    background:#fff;
+    padding:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,.06);
+}
+
+.room-detail dt{
+    font-family:"Cormorant Garamond",serif;
+    font-size:1.6rem;
+    letter-spacing:.15em;
+    color:var(--accent);
+    margin-bottom:12px;
+}
+
+.room-detail dd{
+    font-size:1.6rem;
+    color:#444;
+    line-height:1.8;
+}
+
+@media screen and (max-width:768px){
+    .room-detail{
+        grid-template-columns:1fr;
+    }
+}
+.contact-form input[type="date"],
+.contact-form select{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    font-family:inherit;
+    font-size:1.6rem;
+    color:#444;
+    background:#fff;
+}
+
+.contact-form input[type="date"]{
+    cursor:pointer;
+}
+
+/* カレンダーアイコンをアクセントカラーに寄せる（Chrome/Edge対応） */
+.contact-form input[type="date"]::-webkit-calendar-picker-indicator{
+    filter:invert(48%) sepia(15%) saturate(1200%) hue-rotate(0deg) opacity(.7);
+    cursor:pointer;
+}
